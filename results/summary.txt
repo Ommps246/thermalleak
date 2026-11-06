@@ -1,0 +1,37 @@
+========================================================================
+PHYSICS ABLATION
+========================================================================
+configuration                AUC   recall     FPR   loc px
+differencing only          0.705    0.210   0.053      1.0
+physics-informed           0.965    0.777   0.053      1.2
+
+recall is measured at a 5% false-alarm rate, with the
+threshold chosen on no-leak pairs only, and requires the top-ranked
+candidate to be localised on the true leak.
+
+========================================================================
+SENSITIVITY BY LEAK POWER
+========================================================================
+leak power (W)       diff-only     physics     n
+0.013                     0.00        0.38    34
+0.023                     0.00        0.64    33
+0.041                     0.00        0.78    37
+0.071                     0.11        0.80    45
+0.123                     0.27        0.92    26
+0.214                     0.57        1.00    37
+0.371                     0.64        0.96    25
+
+physics-informed 50% detection limit: ~0.023 W
+differencing-only 50% detection limit: ~0.214 W
+
+========================================================================
+ARTEFACT REJECTION (candidate level)
+========================================================================
+physics score on 50 true leaks:  p10 0.59  median 0.88  p90 0.99
+physics score on 303 artefacts:   p10 0.00  median 0.13  p90 0.74
+at a 0.45 cut: 96% of true leaks kept, 79% of artefacts rejected
+
+wrote results/evaluation.png
+wrote results/example_strong.png
+wrote results/example_weak.png
+wrote results/example_none.png

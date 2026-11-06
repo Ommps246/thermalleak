@@ -1,0 +1,96 @@
+{
+  "rung": "full simulation",
+  "material": "abs_casing",
+  "n_pairs": 500,
+  "seed": 11,
+  "verdict": "nuisance-limited",
+  "rows": [
+    {
+      "detector": "microbolometer",
+      "name": "Uncooled VOx microbolometer",
+      "kind": "thermal",
+      "netd_mk": 50.0,
+      "auc": 0.9649843505477307,
+      "recall_at_5pct_fpr": 0.7773109243697479,
+      "limit_bin_w": 0.02339922264834207,
+      "limit_w": 0.017391070772153096,
+      "photon_bound_w": 0.0007034208149752128
+    },
+    {
+      "detector": "qwip",
+      "name": "QWIP (cooled, LWIR)",
+      "kind": "photon",
+      "netd_mk": 24.578191047715944,
+      "auc": 0.9659415584415585,
+      "recall_at_5pct_fpr": 0.7479338842975206,
+      "limit_bin_w": 0.02319965850043806,
+      "limit_w": 0.01804653187130482,
+      "photon_bound_w": 0.0003457762235480165
+    },
+    {
+      "detector": "hgcdte",
+      "name": "HgCdTe (cooled, LWIR)",
+      "kind": "photon",
+      "netd_mk": 28.590725951383575,
+      "auc": 0.9673214285714286,
+      "recall_at_5pct_fpr": 0.743801652892562,
+      "limit_bin_w": 0.02319965850043806,
+      "limit_w": 0.01899425516953525,
+      "photon_bound_w": 0.000402226234989104
+    },
+    {
+      "detector": "sota_lwir",
+      "name": "Digital-pixel LWIR array (state of the art)",
+      "kind": "photon",
+      "netd_mk": 3.0324867855792985,
+      "auc": 0.9631197392108207,
+      "recall_at_5pct_fpr": 0.7768595041322314,
+      "limit_bin_w": 0.02319965850043806,
+      "limit_w": 0.01595507149945755,
+      "photon_bound_w": 4.266228652227506e-05
+    },
+    {
+      "detector": "blip",
+      "name": "BLIP limit (ideal photon detector)",
+      "kind": "photon",
+      "netd_mk": 0.35650624394170216,
+      "auc": 0.9575030599755201,
+      "recall_at_5pct_fpr": 0.7436974789915967,
+      "limit_bin_w": 0.02339922264834207,
+      "limit_w": 0.015713603534053426,
+      "photon_bound_w": 5.015478253144482e-06
+    }
+  ],
+  "isolation_ladder": [
+    {
+      "configuration": "all nuisances present",
+      "limit_w": 0.01694706379781746,
+      "recall": 0.40756302521008403,
+      "below_sampled_range": false
+    },
+    {
+      "configuration": "fixed-pattern drift removed",
+      "limit_w": 0.01814920273906782,
+      "recall": 0.3949579831932773,
+      "below_sampled_range": false
+    },
+    {
+      "configuration": "+ misalignment removed",
+      "limit_w": 0.007997769764626177,
+      "recall": 0.508,
+      "below_sampled_range": false
+    },
+    {
+      "configuration": "+ reflections removed",
+      "limit_w": 0.011229382924775403,
+      "recall": 0.47413793103448276,
+      "below_sampled_range": false
+    },
+    {
+      "configuration": "+ workload drift removed",
+      "limit_w": null,
+      "recall": 0.9291044776119403,
+      "below_sampled_range": true
+    }
+  ]
+}

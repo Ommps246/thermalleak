@@ -1,0 +1,19 @@
+HELDOUT  --  rung: full simulation
+steel_pipe leak-power range scaled by k*d ratio = 17.8x (0.18-8.9 W)
+cached abs_casing seed 101 (tuning): 500 pairs (40s)
+cached abs_casing seed 201: 500 pairs (38s)
+cached steel_pipe seed 301: 500 pairs (38s)
+
+TUNE on abs_casing seed 101 (tuning): best weights (profile, length, sharpness, novelty) = [0.55, 0.2, 0.1, 0.15]  tuning AUC 0.978  (shipped weights on the same set: 0.957)
+scored once on                         shipped AUC [95% CI]      re-tuned AUC [95% CI]    kept/rejected @0.45 (shipped)
+abs_casing seed 201                0.968 [0.952, 0.981]     0.971 [0.952, 0.985]     96% of 244 leaks /   76% of 1315 artefacts
+steel_pipe seed 301                0.955 [0.937, 0.970]     0.951 [0.932, 0.968]     85% of 130 leaks /   75% of 141 artefacts
+
+TUNE on steel_pipe seed 301: best weights (profile, length, sharpness, novelty) = [0.15, 0.25, 0.05, 0.55]  tuning AUC 0.962  (shipped weights on the same set: 0.955)
+scored once on                         shipped AUC [95% CI]      re-tuned AUC [95% CI]    kept/rejected @0.45 (shipped)
+abs_casing seed 201                0.968 [0.952, 0.981]     0.947 [0.926, 0.964]     96% of 244 leaks /   76% of 1315 artefacts
+
+shipped weights vs differencing only, on each set (AUC / recall at 5% FPR):
+  abs_casing seed 101 (tuning)     physics 0.957 / 0.756    differencing 0.737 / 0.225
+  abs_casing seed 201              physics 0.968 / 0.760    differencing 0.727 / 0.229
+  steel_pipe seed 301              physics 0.955 / 0.484    differencing 0.851 / 0.128

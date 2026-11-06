@@ -1,0 +1,27 @@
+DETECTOR SWEEP  --  rung: full simulation
+material abs_casing: thermal length 11.3 mm, h = 14.0 W/m^2K; 500 pairs per row, seed 11
+Identical scenes, leaks, drift and misalignment in every row; only the noise draw changes.
+The camera is built exactly as run_evaluation.py builds it (seed=None, so the same
+fixed-pattern map), which makes the microbolometer row a reproduction of summary.txt.
+
+detector         kind          NETD     AUC  recall  50% (bin)  50% (interp)  photon bound
+------------------------------------------------------------------------------------------
+microbolometer   thermal   50.00 mK   0.965   0.777    0.023 W      17.39 mW      0.703 mW   (35s)
+qwip             photon    24.58 mK   0.966   0.748    0.023 W      18.05 mW      0.346 mW   (38s)
+hgcdte           photon    28.59 mK   0.967   0.744    0.023 W      18.99 mW      0.402 mW   (39s)
+sota_lwir        photon     3.03 mK   0.963   0.777    0.023 W      15.96 mW      0.043 mW   (37s)
+blip             photon     0.36 mK   0.958   0.744    0.023 W      15.71 mW      0.005 mW   (38s)
+
+NETD spans 140x across these detectors; the detection limit spans 1.21x.
+transfer exponent 0.04  ->  NUISANCE-LIMITED
+
+ISOLATING THE FLOOR -- ideal (BLIP) detector, nuisances removed one at a time
+(leak power sampled down to 0.5 mW so a low floor stays measurable,
+ which makes this a different dataset from the table above; limits interpolated)
+configuration                    50% (interp)  recall
+----------------------------------------------------
+all nuisances present                16.95 mW   0.408
+fixed-pattern drift removed          18.15 mW   0.395
++ misalignment removed                8.00 mW   0.508
++ reflections removed                11.23 mW   0.474
++ workload drift removed            <  0.5 mW   0.929

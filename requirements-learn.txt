@@ -1,0 +1,10 @@
+# Optional: the learned arm (thermalleak/learn.py, scripts/run_learning.py,
+# scripts/run_constrained_learning.py).
+#
+# Kept apart from requirements.txt on purpose: that file pins the stack the
+# detection numbers in results/summary.txt reproduce on, and the detection
+# pipeline never imports scikit-learn. This file pins the version the learning
+# results in results/constrained_learning.txt were produced with.
+#
+#     pip install -r requirements.txt -r requirements-learn.txt
+scikit-learn==1.9.0

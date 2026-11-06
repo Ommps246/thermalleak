@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thermalleak"
+version = "0.1.0"
+description = "Physics-informed detection of thermal leaks from paired thermal images"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "opencv-python>=4.8",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+# The learned arm only; the detection pipeline never imports it. Pinned
+# exactly in requirements-learn.txt.
+learn = ["scikit-learn>=1.5"]
+
+[tool.setuptools]
+packages = ["thermalleak"]
+
+[tool.pytest.ini_options]
+# Put the project root on sys.path so `from thermalleak import ...` resolves
+# when tests are run as a bare `pytest` from the project root.
+#
+# Without this, pytest inserts only the *test file's* directory (tests/) and the
+# package one level up is invisible -- the classic "ModuleNotFoundError: No
+# module named thermalleak" that appears even though the package is sitting
+# right there. `python -m pytest` happens to work because the interpreter adds
+# the working directory itself, which is why the two invocations disagree.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

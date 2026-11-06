@@ -1,0 +1,140 @@
+PHYSICS-CONSTRAINED LEARNER  --  rung: full simulation (candidate-level AUC)
+monotone directions: {'fit_score': 1, 'length_score': 1, 'sharpness_score': 1, 'novelty_score': 1}; geometry features unconstrained
+
+simulating 600 pairs of abs_casing ...
+  1907 candidates from 588 frame pairs, 279 on a true leak (14.6%)
+simulating 1000 pairs of steel_pipe (never trained on) ...
+  364 candidates from 319 frame pairs, 143 on a true leak (39.3%)
+simulating 1000 pairs of abs_casing with a 0.16 m field (2.0x the default magnification) ...
+  1803 candidates from 973 frame pairs, 462 on a true leak (25.6%)
+simulating 1000 pairs of abs_casing with a 0.64 m field (0.5x the default magnification) ...
+  3580 candidates from 993 frame pairs, 429 on a true leak (12.0%)
+
+============================================================================================
+FEATURE SET: four physics scores (4 features)
+============================================================================================
+scorer                           test (held-out seeds)   transfer (steel_pipe)       camera scale x2.0       camera scale x0.5  transfer gap
+--------------------------------------------------------------------------------------------------------------------------------------------
+gradient_boosting                       0.960 +- 0.019          0.868 +- 0.020          0.939 +- 0.005          0.888 +- 0.006        +0.092
+logistic_regression                     0.930 +- 0.029          0.902 +- 0.005          0.918 +- 0.006          0.907 +- 0.000        +0.028
+hist_gb (unconstrained)                 0.954 +- 0.022          0.881 +- 0.042          0.944 +- 0.005          0.886 +- 0.008        +0.072
+hist_gb (physics-monotone)              0.945 +- 0.030          0.913 +- 0.018          0.936 +- 0.004          0.914 +- 0.002        +0.031
+physics_score (hand-weighted)           0.920 +- 0.024          0.951 +- 0.000          0.910 +- 0.000          0.905 +- 0.000        +0.015
+
+in-distribution, paired against physics within each split (mean +- sd over splits):
+  logistic_regression - physics                 +0.010 +- 0.009   better in 4/5 splits
+  gradient_boosting - physics                   +0.040 +- 0.016   better in 5/5 splits
+  hist_gb (physics-monotone) - physics          +0.024 +- 0.010   better in 5/5 splits
+
+transfer (steel_pipe): 143 positive / 221 negative candidates from 319 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.875      [0.837, 0.914]
+  logistic_regression                            0.902      [0.867, 0.935]
+  hist_gb (unconstrained)                        0.905      [0.873, 0.935]
+  hist_gb (physics-monotone)                     0.919      [0.882, 0.952]
+  physics_score (hand-weighted)                  0.951      [0.927, 0.971]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          +0.014    [-0.009, +0.037]       0.88
+  hist_gb (physics-monotone) - physics_score    -0.032    [-0.062, -0.005]       0.01
+  gradient_boosting - physics_score             -0.076    [-0.110, -0.041]       0.00
+  hist_gb (unconstrained) - gradient_boosting   +0.029    [+0.011, +0.050]       1.00
+  logistic_regression - physics_score           -0.049    [-0.073, -0.026]       0.00
+  logistic_regression - gradient_boosting       +0.027    [-0.004, +0.059]       0.95
+
+camera scale x2.0: 462 positive / 1341 negative candidates from 973 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.949      [0.936, 0.960]
+  logistic_regression                            0.919      [0.903, 0.933]
+  hist_gb (unconstrained)                        0.956      [0.945, 0.966]
+  hist_gb (physics-monotone)                     0.942      [0.928, 0.955]
+  physics_score (hand-weighted)                  0.910      [0.896, 0.923]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          -0.014    [-0.022, -0.005]       0.00
+  hist_gb (physics-monotone) - physics_score    +0.032    [+0.021, +0.043]       1.00
+  gradient_boosting - physics_score             +0.039    [+0.027, +0.051]       1.00
+  hist_gb (unconstrained) - gradient_boosting   +0.007    [+0.002, +0.012]       1.00
+  logistic_regression - physics_score           +0.009    [+0.002, +0.015]       1.00
+  logistic_regression - gradient_boosting       -0.030    [-0.041, -0.019]       0.00
+
+camera scale x0.5: 429 positive / 3151 negative candidates from 993 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.894      [0.870, 0.915]
+  logistic_regression                            0.907      [0.888, 0.925]
+  hist_gb (unconstrained)                        0.891      [0.867, 0.911]
+  hist_gb (physics-monotone)                     0.916      [0.897, 0.933]
+  physics_score (hand-weighted)                  0.905      [0.888, 0.922]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          +0.025    [+0.015, +0.036]       1.00
+  hist_gb (physics-monotone) - physics_score    +0.011    [+0.004, +0.017]       1.00
+  gradient_boosting - physics_score             -0.012    [-0.024, -0.000]       0.02
+  hist_gb (unconstrained) - gradient_boosting   -0.003    [-0.009, +0.002]       0.14
+  logistic_regression - physics_score           +0.001    [-0.004, +0.007]       0.69
+  logistic_regression - gradient_boosting       +0.013    [+0.003, +0.023]       0.99
+
+============================================================================================
+FEATURE SET: all features (scores + geometry) (12 features)
+============================================================================================
+scorer                           test (held-out seeds)   transfer (steel_pipe)       camera scale x2.0       camera scale x0.5  transfer gap
+--------------------------------------------------------------------------------------------------------------------------------------------
+gradient_boosting                       0.977 +- 0.014          0.832 +- 0.078          0.925 +- 0.007          0.876 +- 0.010        +0.145
+logistic_regression                     0.968 +- 0.016          0.968 +- 0.002          0.932 +- 0.006          0.912 +- 0.007        +0.057
+hist_gb (unconstrained)                 0.980 +- 0.012          0.813 +- 0.069          0.915 +- 0.012          0.857 +- 0.018        +0.167
+hist_gb (physics-monotone)              0.977 +- 0.013          0.815 +- 0.063          0.915 +- 0.012          0.876 +- 0.018        +0.163
+physics_score (hand-weighted)           0.920 +- 0.024          0.951 +- 0.000          0.910 +- 0.000          0.905 +- 0.000        +0.015
+
+in-distribution, paired against physics within each split (mean +- sd over splits):
+  logistic_regression - physics                 +0.048 +- 0.013   better in 5/5 splits
+  gradient_boosting - physics                   +0.057 +- 0.014   better in 5/5 splits
+  hist_gb (physics-monotone) - physics          +0.057 +- 0.013   better in 5/5 splits
+
+transfer (steel_pipe): 143 positive / 221 negative candidates from 319 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.881      [0.843, 0.916]
+  logistic_regression                            0.969      [0.951, 0.984]
+  hist_gb (unconstrained)                        0.847      [0.807, 0.887]
+  hist_gb (physics-monotone)                     0.824      [0.782, 0.865]
+  physics_score (hand-weighted)                  0.951      [0.927, 0.971]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          -0.023    [-0.046, -0.001]       0.02
+  hist_gb (physics-monotone) - physics_score    -0.127    [-0.172, -0.083]       0.00
+  gradient_boosting - physics_score             -0.070    [-0.107, -0.035]       0.00
+  hist_gb (unconstrained) - gradient_boosting   -0.033    [-0.064, -0.002]       0.02
+  logistic_regression - physics_score           +0.018    [+0.000, +0.037]       0.98
+  logistic_regression - gradient_boosting       +0.088    [+0.053, +0.125]       1.00
+
+camera scale x2.0: 462 positive / 1341 negative candidates from 973 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.944      [0.929, 0.958]
+  logistic_regression                            0.934      [0.920, 0.947]
+  hist_gb (unconstrained)                        0.933      [0.917, 0.947]
+  hist_gb (physics-monotone)                     0.928      [0.912, 0.943]
+  physics_score (hand-weighted)                  0.910      [0.896, 0.923]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          -0.004    [-0.010, +0.001]       0.05
+  hist_gb (physics-monotone) - physics_score    +0.018    [+0.002, +0.034]       0.99
+  gradient_boosting - physics_score             +0.034    [+0.019, +0.050]       1.00
+  hist_gb (unconstrained) - gradient_boosting   -0.011    [-0.019, -0.005]       0.00
+  logistic_regression - physics_score           +0.024    [+0.013, +0.035]       1.00
+  logistic_regression - gradient_boosting       -0.010    [-0.022, +0.003]       0.07
+
+camera scale x0.5: 429 positive / 3151 negative candidates from 993 pairs; 2000 grouped bootstrap resamples
+  ensemble AUC (5 splits averaged)                 AUC              95% CI
+  gradient_boosting                              0.883      [0.863, 0.903]
+  logistic_regression                            0.913      [0.897, 0.926]
+  hist_gb (unconstrained)                        0.866      [0.845, 0.888]
+  hist_gb (physics-monotone)                     0.885      [0.866, 0.903]
+  physics_score (hand-weighted)                  0.905      [0.888, 0.922]
+  paired difference                               diff              95% CI  P(diff>0)
+  hist_gb (physics-monotone) - hist_gb          +0.018    [+0.013, +0.024]       1.00
+  hist_gb (physics-monotone) - physics_score    -0.020    [-0.033, -0.007]       0.00
+  gradient_boosting - physics_score             -0.022    [-0.035, -0.009]       0.00
+  hist_gb (unconstrained) - gradient_boosting   -0.017    [-0.022, -0.012]       0.00
+  logistic_regression - physics_score           +0.007    [-0.004, +0.019]       0.90
+  logistic_regression - gradient_boosting       +0.029    [+0.016, +0.042]       1.00
+
+VERDICT (four physics scores, primary transfer material)
+  in-distribution:  monotone 0.945   control 0.954   original GB 0.960   physics 0.920
+  transfer:         monotone 0.913   control 0.881   original GB 0.868   physics 0.951
+  constraint effect (monotone - control)      +0.014  95% CI [-0.009, +0.037]  -> NOT distinguishable from zero
+  monotone learner vs hand-weighted physics   -0.032  95% CI [-0.062, -0.005]  -> real
+  original GB vs hand-weighted physics        -0.076  95% CI [-0.110, -0.041]  -> real

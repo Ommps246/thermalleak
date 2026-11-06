@@ -1,0 +1,878 @@
+{
+  "rung": "full simulation",
+  "level": "candidate",
+  "directions": {
+    "fit_score": 1,
+    "length_score": 1,
+    "sharpness_score": 1,
+    "novelty_score": 1
+  },
+  "feature_sets": {
+    "four physics scores": {
+      "gradient_boosting": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9602597914677062,
+          "auc_std": 0.018968013393319594,
+          "tpr_mean": 0.8910278092428193,
+          "fpr_mean": 0.052742593127200296
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.8680948011264753,
+          "auc_std": 0.019922935260241137,
+          "tpr_mean": 0.6027972027972028,
+          "fpr_mean": 0.041628959276018104
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9394380042031049,
+          "auc_std": 0.005110741852869144,
+          "tpr_mean": 0.7792207792207793,
+          "fpr_mean": 0.04548844146159582
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.8881908951093337,
+          "auc_std": 0.006332746576066232,
+          "tpr_mean": 0.814918414918415,
+          "fpr_mean": 0.15734687400825134
+        },
+        "transfer_gap": 0.09216499034123093
+      },
+      "logistic_regression": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9301347975256533,
+          "auc_std": 0.02904676657317277,
+          "tpr_mean": 0.755707348770229,
+          "fpr_mean": 0.04174042220284329
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.9016359206404456,
+          "auc_std": 0.004656538700475592,
+          "tpr_mean": 0.32447552447552447,
+          "fpr_mean": 0.020814479638009052
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9178602903435117,
+          "auc_std": 0.005736017960766966,
+          "tpr_mean": 0.6354978354978356,
+          "fpr_mean": 0.03832960477255779
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.90652288576757,
+          "auc_std": 0.00040861727010688267,
+          "tpr_mean": 0.7114219114219115,
+          "fpr_mean": 0.06194858774992066
+        },
+        "transfer_gap": 0.02849887688520769
+      },
+      "hist_gb (unconstrained)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9535075581642423,
+          "auc_std": 0.021624416538318193,
+          "tpr_mean": 0.8906796574429144,
+          "fpr_mean": 0.060298531134528
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.8811093883492072,
+          "auc_std": 0.04166885174080736,
+          "tpr_mean": 0.6223776223776224,
+          "fpr_mean": 0.05248868778280543
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9441364750089581,
+          "auc_std": 0.004826745281338276,
+          "tpr_mean": 0.7930735930735929,
+          "fpr_mean": 0.045339299030574196
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.8857535144428195,
+          "auc_std": 0.007547608120735945,
+          "tpr_mean": 0.8261072261072261,
+          "fpr_mean": 0.20774357346874012
+        },
+        "transfer_gap": 0.07239816981503511
+      },
+      "hist_gb (physics-monotone)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9445075108548556,
+          "auc_std": 0.03018926568595101,
+          "tpr_mean": 0.8793882443259434,
+          "fpr_mean": 0.04827518189903894
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.9134037907793564,
+          "auc_std": 0.01824356392447577,
+          "tpr_mean": 0.6293706293706294,
+          "fpr_mean": 0.025339366515837104
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9359788359788359,
+          "auc_std": 0.00420848901517466,
+          "tpr_mean": 0.7740259740259741,
+          "fpr_mean": 0.03982102908277405
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.9138845920819897,
+          "auc_std": 0.0019946300671706595,
+          "tpr_mean": 0.8265734265734267,
+          "fpr_mean": 0.12732465883846394
+        },
+        "transfer_gap": 0.03110372007549922
+      },
+      "physics_score (hand-weighted)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9203759529232454,
+          "auc_std": 0.024150365967813663,
+          "tpr_mean": 0.6579424998839661,
+          "fpr_mean": 0.05039919254837564
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.9512071638768471,
+          "auc_std": 0.0,
+          "tpr_mean": 0.2811188811188811,
+          "fpr_mean": 0.00904977375565611
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9101965645589807,
+          "auc_std": 0.0,
+          "tpr_mean": 0.5303030303030303,
+          "fpr_mean": 0.030275913497390006
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.9052744568453865,
+          "auc_std": 1.1102230246251565e-16,
+          "tpr_mean": 0.6615384615384615,
+          "fpr_mean": 0.05318946366232942
+        },
+        "transfer_gap": 0.015101496077858823
+      },
+      "paired_in_distribution_vs_physics": {
+        "logistic_regression": {
+          "diff_mean": 0.009758844602407968,
+          "diff_sd": 0.009411526465884537,
+          "splits_better": 4
+        },
+        "gradient_boosting": {
+          "diff_mean": 0.03988383854446098,
+          "diff_sd": 0.016233781265000767,
+          "splits_better": 5
+        },
+        "hist_gb (physics-monotone)": {
+          "diff_mean": 0.02413155793161037,
+          "diff_sd": 0.010206389371885958,
+          "splits_better": 5
+        }
+      },
+      "bootstrap": {
+        "transfer (steel_pipe)": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.8752808277695155,
+            "logistic_regression": 0.902224472360219,
+            "hist_gb (unconstrained)": 0.9045343796475018,
+            "hist_gb (physics-monotone)": 0.9187260703097807,
+            "physics_score (hand-weighted)": 0.9512071638768471
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.83653152365303,
+              0.9137039758893153
+            ],
+            "logistic_regression": [
+              0.866713834155778,
+              0.9345675800623551
+            ],
+            "hist_gb (unconstrained)": [
+              0.8726476250431626,
+              0.9349151790003358
+            ],
+            "hist_gb (physics-monotone)": [
+              0.8823179291789839,
+              0.9520630740782495
+            ],
+            "physics_score (hand-weighted)": [
+              0.9274751780955515,
+              0.9714013705464007
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": 0.014191690662278877,
+              "ci95": [
+                -0.008979009560579478,
+                0.03662304949817034
+              ],
+              "p_positive": 0.884
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": -0.03248109356706641,
+              "ci95": [
+                -0.06202821514589325,
+                -0.0046644996748834945
+              ],
+              "p_positive": 0.009
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": -0.07592633610733157,
+              "ci95": [
+                -0.1099672767022412,
+                -0.04124752362622786
+              ],
+              "p_positive": 0.0
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": 0.029253551877986284,
+              "ci95": [
+                0.010618284766751137,
+                0.049807910660116625
+              ],
+              "p_positive": 1.0
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": -0.04898269151662815,
+              "ci95": [
+                -0.07285576251932582,
+                -0.025945333600229374
+              ],
+              "p_positive": 0.0
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": 0.02694364459070342,
+              "ci95": [
+                -0.004494350999541477,
+                0.058669965440283287
+              ],
+              "p_positive": 0.949
+            }
+          },
+          "n_pos": 143,
+          "n_neg": 221,
+          "n_pairs": 319
+        },
+        "camera scale x2.0": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.9491204793218215,
+            "logistic_regression": 0.9191612513760165,
+            "hist_gb (unconstrained)": 0.9561313034467397,
+            "hist_gb (physics-monotone)": 0.9423178735259272,
+            "physics_score (hand-weighted)": 0.9101965645589807
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.93617104686545,
+              0.9604451611918033
+            ],
+            "logistic_regression": [
+              0.9033358212193024,
+              0.9330401345118481
+            ],
+            "hist_gb (unconstrained)": [
+              0.9447196988162656,
+              0.9659143242212619
+            ],
+            "hist_gb (physics-monotone)": [
+              0.9282701949984146,
+              0.955086853641633
+            ],
+            "physics_score (hand-weighted)": [
+              0.8957786194533999,
+              0.9234155777793309
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": -0.01381342992081247,
+              "ci95": [
+                -0.02239171184712311,
+                -0.005304776325663644
+              ],
+              "p_positive": 0.0
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": 0.03212130896694654,
+              "ci95": [
+                0.021331436474055887,
+                0.043454246591013955
+              ],
+              "p_positive": 1.0
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": 0.03892391476284085,
+              "ci95": [
+                0.02698682079855031,
+                0.05119483067359266
+              ],
+              "p_positive": 1.0
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": 0.007010824124918158,
+              "ci95": [
+                0.0018044625622346128,
+                0.012449295802863414
+              ],
+              "p_positive": 0.997
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": 0.008964686817035772,
+              "ci95": [
+                0.0024484105650961125,
+                0.015273743287323435
+              ],
+              "p_positive": 0.9965
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": -0.029959227945805078,
+              "ci95": [
+                -0.04106466008179642,
+                -0.019151670182520845
+              ],
+              "p_positive": 0.0
+            }
+          },
+          "n_pos": 462,
+          "n_neg": 1341,
+          "n_pairs": 973
+        },
+        "camera scale x0.5": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.8936460767625478,
+            "logistic_regression": 0.906557210905037,
+            "hist_gb (unconstrained)": 0.8905616228688269,
+            "hist_gb (physics-monotone)": 0.91598737663479,
+            "physics_score (hand-weighted)": 0.9052744568453867
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.8696865566503827,
+              0.9145495711288284
+            ],
+            "logistic_regression": [
+              0.8876280562149023,
+              0.9245781012632655
+            ],
+            "hist_gb (unconstrained)": [
+              0.8674870336256923,
+              0.9112994356528584
+            ],
+            "hist_gb (physics-monotone)": [
+              0.8971233336751282,
+              0.9331153655163679
+            ],
+            "physics_score (hand-weighted)": [
+              0.8877864511658003,
+              0.9221848062265203
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": 0.02542575376596312,
+              "ci95": [
+                0.015048313484936673,
+                0.0363894059017114
+              ],
+              "p_positive": 1.0
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": 0.010712919789403363,
+              "ci95": [
+                0.0038952212787152383,
+                0.017123718616189543
+              ],
+              "p_positive": 1.0
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": -0.01162838008283884,
+              "ci95": [
+                -0.02372596446565037,
+                -0.0003965755354449485
+              ],
+              "p_positive": 0.0225
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": -0.0030844538937209176,
+              "ci95": [
+                -0.008582351228576233,
+                0.002418123890383515
+              ],
+              "p_positive": 0.143
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": 0.0012827540596503928,
+              "ci95": [
+                -0.003997166501328614,
+                0.006664287386108205
+              ],
+              "p_positive": 0.694
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": 0.012911134142489233,
+              "ci95": [
+                0.0027814331432727464,
+                0.023347279929992172
+              ],
+              "p_positive": 0.992
+            }
+          },
+          "n_pos": 429,
+          "n_neg": 3151,
+          "n_pairs": 993
+        }
+      }
+    },
+    "all features (scores + geometry)": {
+      "gradient_boosting": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9773901145723093,
+          "auc_std": 0.014030293892057837,
+          "tpr_mean": 0.9197486894444298,
+          "fpr_mean": 0.05530189253478122
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.832496914849856,
+          "auc_std": 0.07806594640336455,
+          "tpr_mean": 0.420979020979021,
+          "fpr_mean": 0.04434389140271493
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9248925819395618,
+          "auc_std": 0.006596072028903025,
+          "tpr_mean": 0.8484848484848484,
+          "fpr_mean": 0.11961222967934378
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.8760190830009934,
+          "auc_std": 0.009554822825377748,
+          "tpr_mean": 0.8540792540792541,
+          "fpr_mean": 0.23725801332910187
+        },
+        "transfer_gap": 0.1448931997224533
+      },
+      "logistic_regression": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9684401658806872,
+          "auc_std": 0.016380718097313698,
+          "tpr_mean": 0.864460467572609,
+          "fpr_mean": 0.04180914186869414
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.9678195108059361,
+          "auc_std": 0.0017552927164271007,
+          "tpr_mean": 0.0,
+          "fpr_mean": 0.0
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9322141194624416,
+          "auc_std": 0.005835698507561909,
+          "tpr_mean": 0.5316017316017316,
+          "fpr_mean": 0.006114839671886652
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.9115874710289182,
+          "auc_std": 0.006636960062470862,
+          "tpr_mean": 0.894172494172494,
+          "fpr_mean": 0.1969533481434465
+        },
+        "transfer_gap": 0.056852694851768915
+      },
+      "hist_gb (unconstrained)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9800991255136372,
+          "auc_std": 0.011707124878288316,
+          "tpr_mean": 0.9017207886289313,
+          "fpr_mean": 0.05190108574781802
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.8134417618580514,
+          "auc_std": 0.06877683567842008,
+          "tpr_mean": 0.07412587412587412,
+          "fpr_mean": 0.007239819004524886
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9145499417311498,
+          "auc_std": 0.012432063269054336,
+          "tpr_mean": 0.741991341991342,
+          "fpr_mean": 0.05428784489187174
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.8565037628192183,
+          "auc_std": 0.01844702482385088,
+          "tpr_mean": 0.8433566433566433,
+          "fpr_mean": 0.26994604887337353
+        },
+        "transfer_gap": 0.1666573636555858
+      },
+      "hist_gb (physics-monotone)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9772214395831323,
+          "auc_std": 0.012861802313076506,
+          "tpr_mean": 0.9169337703733531,
+          "fpr_mean": 0.04779577745521875
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.8146726576590831,
+          "auc_std": 0.06277179744000526,
+          "tpr_mean": 0.05174825174825175,
+          "fpr_mean": 0.0036199095022624436
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9146671250698096,
+          "auc_std": 0.012387235147002651,
+          "tpr_mean": 0.696969696969697,
+          "fpr_mean": 0.04205816554809843
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.8755888351572262,
+          "auc_std": 0.017867775150267717,
+          "tpr_mean": 0.8372960372960373,
+          "fpr_mean": 0.22995874325610915
+        },
+        "transfer_gap": 0.1625487819240492
+      },
+      "physics_score (hand-weighted)": {
+        "test (held-out seeds)": {
+          "auc_mean": 0.9203759529232454,
+          "auc_std": 0.024150365967813663,
+          "tpr_mean": 0.6579424998839661,
+          "fpr_mean": 0.05039919254837564
+        },
+        "transfer (steel_pipe)": {
+          "auc_mean": 0.9512071638768471,
+          "auc_std": 0.0,
+          "tpr_mean": 0.2811188811188811,
+          "fpr_mean": 0.00904977375565611
+        },
+        "camera scale x2.0": {
+          "auc_mean": 0.9101965645589807,
+          "auc_std": 0.0,
+          "tpr_mean": 0.5303030303030303,
+          "fpr_mean": 0.030275913497390006
+        },
+        "camera scale x0.5": {
+          "auc_mean": 0.9052744568453865,
+          "auc_std": 1.1102230246251565e-16,
+          "tpr_mean": 0.6615384615384615,
+          "fpr_mean": 0.05318946366232942
+        },
+        "transfer_gap": 0.015101496077858823
+      },
+      "paired_in_distribution_vs_physics": {
+        "logistic_regression": {
+          "diff_mean": 0.04806421295744188,
+          "diff_sd": 0.013010441244383521,
+          "splits_better": 5
+        },
+        "gradient_boosting": {
+          "diff_mean": 0.05701416164906388,
+          "diff_sd": 0.01364183668710824,
+          "splits_better": 5
+        },
+        "hist_gb (physics-monotone)": {
+          "diff_mean": 0.056845486659887,
+          "diff_sd": 0.01285370513797913,
+          "splits_better": 5
+        }
+      },
+      "bootstrap": {
+        "transfer (steel_pipe)": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.8807075277663513,
+            "logistic_regression": 0.9689270006012087,
+            "hist_gb (unconstrained)": 0.8473246210802774,
+            "hist_gb (physics-monotone)": 0.8240989779451318,
+            "physics_score (hand-weighted)": 0.9512071638768471
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.8433719937954723,
+              0.9161831911517254
+            ],
+            "logistic_regression": [
+              0.9506637155586797,
+              0.9841778283476259
+            ],
+            "hist_gb (unconstrained)": [
+              0.8068894093805651,
+              0.8866153334598326
+            ],
+            "hist_gb (physics-monotone)": [
+              0.7816270525880729,
+              0.8648547951226202
+            ],
+            "physics_score (hand-weighted)": [
+              0.9274751780955515,
+              0.9714013705464007
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": -0.023225643135145635,
+              "ci95": [
+                -0.046037275996259445,
+                -0.0013502560505029395
+              ],
+              "p_positive": 0.019
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": -0.12710818593171536,
+              "ci95": [
+                -0.17196083169715456,
+                -0.0833651822265467
+              ],
+              "p_positive": 0.0
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": -0.07049963611049581,
+              "ci95": [
+                -0.10692727599893531,
+                -0.03544903825564912
+              ],
+              "p_positive": 0.0005
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": -0.03338290668607391,
+              "ci95": [
+                -0.06396380408098085,
+                -0.0023074581548199334
+              ],
+              "p_positive": 0.0165
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": 0.017719836724361615,
+              "ci95": [
+                0.0001531738844406356,
+                0.03650676030146482
+              ],
+              "p_positive": 0.9755
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": 0.08821947283485743,
+              "ci95": [
+                0.05301455068162852,
+                0.12497090059234048
+              ],
+              "p_positive": 1.0
+            }
+          },
+          "n_pos": 143,
+          "n_neg": 221,
+          "n_pairs": 319
+        },
+        "camera scale x2.0": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.9441248535208268,
+            "logistic_regression": 0.9343660316814679,
+            "hist_gb (unconstrained)": 0.9328907483269899,
+            "hist_gb (physics-monotone)": 0.92844552911667,
+            "physics_score (hand-weighted)": 0.9101965645589807
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.9286636650619626,
+              0.957851504051399
+            ],
+            "logistic_regression": [
+              0.9202507174926499,
+              0.9474907498318497
+            ],
+            "hist_gb (unconstrained)": [
+              0.9167038885780829,
+              0.9472203151409375
+            ],
+            "hist_gb (physics-monotone)": [
+              0.9115710887963442,
+              0.9429612018476857
+            ],
+            "physics_score (hand-weighted)": [
+              0.8957786194533999,
+              0.9234155777793309
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": -0.004445219210319928,
+              "ci95": [
+                -0.010070158279622609,
+                0.000767174449585077
+              ],
+              "p_positive": 0.0495
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": 0.018248964557689318,
+              "ci95": [
+                0.0019727219343574575,
+                0.03392832445580683
+              ],
+              "p_positive": 0.9855
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": 0.033928288961846076,
+              "ci95": [
+                0.01887712960282116,
+                0.0496127124969227
+              ],
+              "p_positive": 1.0
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": -0.01123410519383683,
+              "ci95": [
+                -0.018637832364098633,
+                -0.004664303003161107
+              ],
+              "p_positive": 0.0005
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": 0.024169467122487243,
+              "ci95": [
+                0.012983437161455155,
+                0.035216652685611
+              ],
+              "p_positive": 1.0
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": -0.009758821839358833,
+              "ci95": [
+                -0.022061012748948068,
+                0.00258259727626397
+              ],
+              "p_positive": 0.067
+            }
+          },
+          "n_pos": 462,
+          "n_neg": 1341,
+          "n_pairs": 973
+        },
+        "camera scale x0.5": {
+          "ensemble_auc": {
+            "gradient_boosting": 0.883418073516455,
+            "logistic_regression": 0.912661759059728,
+            "hist_gb (unconstrained)": 0.8664234316408229,
+            "hist_gb (physics-monotone)": 0.8848495205207361,
+            "physics_score (hand-weighted)": 0.9052744568453867
+          },
+          "ci95": {
+            "gradient_boosting": [
+              0.863270377768915,
+              0.9029923721492964
+            ],
+            "logistic_regression": [
+              0.8971995602137091,
+              0.9263341223843156
+            ],
+            "hist_gb (unconstrained)": [
+              0.8446596929372777,
+              0.8875405544589009
+            ],
+            "hist_gb (physics-monotone)": [
+              0.8658158369620607,
+              0.9032554526566801
+            ],
+            "physics_score (hand-weighted)": [
+              0.8877864511658003,
+              0.9221848062265203
+            ]
+          },
+          "paired_differences": {
+            "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+              "diff": 0.01842608887991315,
+              "ci95": [
+                0.012642069672746706,
+                0.024352022277315526
+              ],
+              "p_positive": 1.0
+            },
+            "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+              "diff": -0.02042493632465059,
+              "ci95": [
+                -0.03322640350160197,
+                -0.007375873812084388
+              ],
+              "p_positive": 0.001
+            },
+            "gradient_boosting - physics_score (hand-weighted)": {
+              "diff": -0.021856383328931694,
+              "ci95": [
+                -0.03504467021928521,
+                -0.00915923003059416
+              ],
+              "p_positive": 0.0005
+            },
+            "hist_gb (unconstrained) - gradient_boosting": {
+              "diff": -0.016994641875632044,
+              "ci95": [
+                -0.021830655516682777,
+                -0.011830590480770951
+              ],
+              "p_positive": 0.0
+            },
+            "logistic_regression - physics_score (hand-weighted)": {
+              "diff": 0.0073873022143413625,
+              "ci95": [
+                -0.0036339446864446707,
+                0.0189079503809423
+              ],
+              "p_positive": 0.9015
+            },
+            "logistic_regression - gradient_boosting": {
+              "diff": 0.029243685543273057,
+              "ci95": [
+                0.015873044286329862,
+                0.04247144210082127
+              ],
+              "p_positive": 1.0
+            }
+          },
+          "n_pos": 429,
+          "n_neg": 3151,
+          "n_pairs": 993
+        }
+      }
+    }
+  },
+  "verdict": {
+    "hist_gb (physics-monotone) - hist_gb (unconstrained)": {
+      "diff": 0.014191690662278877,
+      "ci95": [
+        -0.008979009560579478,
+        0.03662304949817034
+      ],
+      "p_positive": 0.884
+    },
+    "hist_gb (physics-monotone) - physics_score (hand-weighted)": {
+      "diff": -0.03248109356706641,
+      "ci95": [
+        -0.06202821514589325,
+        -0.0046644996748834945
+      ],
+      "p_positive": 0.009
+    },
+    "gradient_boosting - physics_score (hand-weighted)": {
+      "diff": -0.07592633610733157,
+      "ci95": [
+        -0.1099672767022412,
+        -0.04124752362622786
+      ],
+      "p_positive": 0.0
+    },
+    "hist_gb (unconstrained) - gradient_boosting": {
+      "diff": 0.029253551877986284,
+      "ci95": [
+        0.010618284766751137,
+        0.049807910660116625
+      ],
+      "p_positive": 1.0
+    },
+    "logistic_regression - physics_score (hand-weighted)": {
+      "diff": -0.04898269151662815,
+      "ci95": [
+        -0.07285576251932582,
+        -0.025945333600229374
+      ],
+      "p_positive": 0.0
+    },
+    "logistic_regression - gradient_boosting": {
+      "diff": 0.02694364459070342,
+      "ci95": [
+        -0.004494350999541477,
+        0.058669965440283287
+      ],
+      "p_positive": 0.949
+    }
+  }
+}

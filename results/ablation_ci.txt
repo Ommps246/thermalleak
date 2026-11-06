@@ -1,0 +1,37 @@
+ERROR BARS ON THE HEADLINE ABLATION  --  rung: full simulation
+500 pairs per dataset; seeds [11, 12, 13, 14, 15]; first seed is bootstrapped (2000 pair-level resamples, both arms on the same resample)
+
+seed 11: AUC diff-only 0.705  physics 0.965   recall 0.210 -> 0.777   50% limit 0.214 W -> 0.023 W   (44s)
+seed 12: AUC diff-only 0.734  physics 0.965   recall 0.263 -> 0.769   50% limit 0.212 W -> 0.013 W   (43s)
+seed 13: AUC diff-only 0.800  physics 0.973   recall 0.320 -> 0.746   50% limit 0.214 W -> 0.023 W   (42s)
+seed 14: AUC diff-only 0.750  physics 0.945   recall 0.304 -> 0.759   50% limit 0.217 W -> 0.024 W   (42s)
+seed 15: AUC diff-only 0.752  physics 0.958   recall 0.288 -> 0.790   50% limit 0.126 W -> 0.024 W   (40s)
+
+====================================================================================
+BOOTSTRAP, seed 11 (the summary.txt dataset)
+====================================================================================
+                                       point                  95% CI
+AUC, differencing only                 0.705          [0.655, 0.753]
+AUC, physics-informed                  0.965          [0.950, 0.977]
+AUC gain (paired)                     +0.260        [+0.211, +0.310]
+recall at 5% FPR, differencing         0.210          [0.149, 0.264]
+recall at 5% FPR, physics              0.777          [0.720, 0.831]
+50% limit, physics (interp, mW)         17.4            [14.4, 25.3]
+50% limit, differencing (interp, mW)     188.4          [143.3, 301.9]
+sensitivity gain (limit ratio)         10.8x           [6.9x, 17.8x]
+AUC gain > 0 in 100.0% of resamples.
+The bin-convention limits (summary.txt: 0.023 / 0.214 W) can only fall on a bin
+centre, so their interval is not meaningful; the interpolated limit is the one to quote
+with an interval.
+
+====================================================================================
+ACROSS 5 INDEPENDENT DATASETS (mean +- sd, min-max)
+====================================================================================
+AUC, differencing only            0.748 +- 0.034   (0.705 - 0.800)
+AUC, physics-informed             0.961 +- 0.010   (0.945 - 0.973)
+AUC gain                          0.213 +- 0.034   (0.173 - 0.260); positive in 5/5
+recall, differencing              0.277 +- 0.043   (0.210 - 0.320)
+recall, physics                   0.768 +- 0.017   (0.746 - 0.790)
+50% limit, differencing (mW)      146.2 +- 29.0   (113.1 - 188.4)
+50% limit, physics (mW)           19.2 +- 3.4   (17.0 - 24.3)   [defined on 4/5]
+sensitivity gain                  7.7x +- 2.5x   (4.7x - 10.8x)   [defined on 4/5]

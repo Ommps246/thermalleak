@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "thermalleak: physics as a falsification test for quantum-limited thermal leak detection"
+authors:
+  - family-names: Mishra
+    given-names: Om
+    affiliation: "SRM Institute of Science and Technology, India"
+    email: "ommps246@gmail.com"
+  - family-names: Dangayach
+    given-names: Gaurvit
+    affiliation: "SRM Institute of Science and Technology, India"
+license: MIT
+version: "0.1.0"
+date-released: "2026-11-06"
+# Add once deposited:
+# doi: "10.5281/zenodo.XXXXXXX"
+# repository-code: "https://github.com/<user>/<repo>"

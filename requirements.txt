@@ -1,0 +1,23 @@
+# Pinned, not floored. The evaluation numbers are reproducible only against a
+# fixed stack: `generate_dataset(n, seed)` is fully deterministic, and the
+# differencing-only arm of the ablation reproduces bit-exact on every stack
+# tried -- but the physics-informed arm does not. It is the sole consumer of
+# `scipy.optimize.curve_fit` (in `score.py::_fit_bessel`), whose convergence
+# details shift between SciPy releases, and the fitted length feeds the
+# 0.45-weight length test.
+#
+# Measured on the identical 500-pair dataset (seed 11, 238/262 split):
+#
+#   stack                                diff-only AUC   physics AUC   recall
+#   scipy 1.15 / numpy 2.2 / cv2 4.11        0.706          0.960       0.769
+#   scipy 1.18 / numpy 2.5 / cv2 5.0         0.706          0.970       0.782
+#
+# The envelope is about +/-0.012 AUC against a 0.25 AUC physics-vs-differencing
+# gap, so no conclusion moves -- but a "regression" measured against numbers
+# from a different stack is not a regression. Never compare across
+# environments: re-run the unmodified code to get a local before-number first.
+numpy==2.5.2
+scipy==1.18.0
+opencv-python==5.0.0.93
+matplotlib==3.11.1
+pytest==9.1.1
