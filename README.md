@@ -3,7 +3,9 @@
 Code, data-generating simulator and result files for the working paper
 **"Physics as a Falsification Test for Quantum-Limited Thermal Leak Detection"**
 by Om Mishra and Gaurvit Dangayach (School of Computing, SRM Institute of
-Science and Technology; draft, 2026). The Python package is called `thermalleak`.
+Science and Technology; preprint, 2026). The Python package is called `thermalleak`.
+
+**Paper (preprint):** https://doi.org/10.5281/zenodo.24010713
 
 **Status, stated plainly.** Every headline result here comes from a calibrated
 simulator, or from real thermal backgrounds with simulated leaks injected into
