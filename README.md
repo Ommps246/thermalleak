@@ -42,7 +42,9 @@ here; download them from the dataset's own page and see
 
 ## Citing
 
-See `CITATION.cff`. A DOI will be added here once the preprint is deposited.
+[![DOI](https://zenodo.org/badge/1448171090.svg)](https://doi.org/10.5281/zenodo.24009193)
+
+See `CITATION.cff`. Archived on Zenodo: https://doi.org/10.5281/zenodo.24009193
 
 ## Licence
 

@@ -12,6 +12,5 @@ authors:
 license: MIT
 version: "0.1.0"
 date-released: "2026-11-06"
-# Add once deposited:
-# doi: "10.5281/zenodo.XXXXXXX"
-# repository-code: "https://github.com/<user>/<repo>"
+doi: "10.5281/zenodo.24009193"
+repository-code: "https://github.com/Ommps246/thermalleak"
